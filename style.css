@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body{
+    background-color: #1D24CA;
+    color: #fff;
+    overflow-x: hidden;   
+}
+
+.Nav{
+    height: 20%;
+    width: 100vw;
+    margin: 10px auto; 
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+}
+
+.Name{
+    height: 4rem;
+    width: 25rem;
+    min-width: 280px;
+    font-size:34px ;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.Name span{
+    position: relative;
+}
+
+.Name span::before{
+    content: 'Devloper';
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+
+.Name span::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: black;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Devloper";
+    }
+    21%,40%{
+        content: "Designer";
+    }
+    41%,60%{
+        content: "Freelancer";
+    }
+    61%,80%{
+        content: "Blogger";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+
+.About ul{
+    text-decoration: none;
+    list-style: none;
+    height: 20%;
+    width: 10rem;
+    font-size: 30px;
+}
+
+.home{  
+   position: relative;
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: black;
+}
+
+.moon {
+    position: absolute;
+    object-fit: cover;
+    height: auto;
+    width: 60vw;
+    max-width: 100%;  /* Ensures the width doesn't exceed the screen size */
+    max-height: 100vh; /* Limits the height to the viewport height */
+    z-index: 2;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .moon {
+      width: 80vw;  /* Increase width for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .moon {
+      width: 90vw;  /* Further increase width for very small screens */
+      height: auto;
+    }
+  }
+  
+.stars{
+    z-index: 1;
+    position: absolute;
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+    transform-origin: 50% 25% 100%;
+}
+
+.spaceman {
+    z-index: 3;
+    height: 50vh;
+    width: auto;
+    max-width: 30vw;
+    filter: drop-shadow(-10px 5px 5px rgb(81, 74, 74));
+  }
+  
+  @media (max-width: 768px) {
+    .spaceman {
+      height: 20vh;
+      max-width: 40vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .spaceman {
+      height: 15vh;
+      max-width: 50vw;
+    }
+  }
+  
+
+.Hero_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 4;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5vw;
+    gap: 27vw;
+/*     -webkit-text-stroke: 0.5px #fff;
+    color: transparent; */
+  }
+  
+  @media (max-width: 768px) {
+    .Hero_name {
+      top: 25%;
+      font-size: 6vw;
+      gap: 3vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Hero_name {
+      top: 30%;
+      font-size: 8vw;
+      gap: 4vw;
+    }
+  }
+  
+
+.section{
+    position: absolute;
+    height: 100rem;
+    width: 100rem;
+    top: -60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/Sec-background.svg");
+}
+
+
+
+.item1 { grid-area: Intro; }
+.item2 { grid-area: Img; }
+.item3 { grid-area: Title; }
+.item4 { grid-area: Logo; }
+.item5 { grid-area: Qoute; }
+.item6 { grid-area: Tech; }
+.item7 { grid-area: Education; }
+.grid-container{
+    display: grid;
+    position: absolute;
+    height: 100rem;
+    width: 100%;
+    z-index: 5;
+    left: 320px;
+    gap: 10px;
+    grid-template-rows: 200px 100px 100px 100px 100px 100px;
+    grid-template-columns: 100px 200px 200px 100px 100px 100px;
+    grid-template-areas: 
+    'Intro  Intro Intro Intro Img Img'
+    'Title Title Logo Logo Img Img'
+    'Tech Tech Logo Logo Qoute Qoute'
+    'Tech Tech Education Education Education Education'
+    'Tech Tech Education Education Education Education'
+    'Tech Tech Education Education Education Education';
+}
+
+
+.grid-container > div {
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 20px 25px;
+}
+
+.item1{
+    background-color: #021526;
+}
+.item1 p{
+    font-size: 15px;
+
+}
+.item2{
+    display: block;
+    height: 19rem;
+    width: 13rem;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.item3{
+    background-color: #0E3B53;
+}
+.item3 h4{
+    text-align: center;
+    font-size: 25px; 
+}
+
+.item4{
+    align-items: center;
+    background-color: #021526;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 80px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.item4 h5{
+    margin-left: 20px;
+}
+.item5{
+    background-color: #0E3B53;
+}
+.item6{
+    background-color: #021526;
+}
+
+.item6 h5{
+    margin-bottom: 40px;
+}
+
+.fa-brands, .fab{
+    margin-left: 20px;
+    margin-top: 1px;
+}
+.item7{
+    background-color: #021526;
+}
